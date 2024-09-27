@@ -47,7 +47,7 @@ state management, reactive programming, and writing unit tests.
 
 ### **Submission Instructions**
 
-1. Fork the GitHub repository [here](https://github.com/Userlane/candidate-task-angular).
+1. Fork the repository.
 2. Commit your code regularly to show your progress.
 3. Ensure that the application runs without errors.
 4. Submit the GitHub repository link with your final submission.
