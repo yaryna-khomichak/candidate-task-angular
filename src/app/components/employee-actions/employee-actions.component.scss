@@ -1,0 +1,11 @@
+@import 'src/scss/colors.scss';
+
+.employee-actions {
+  &__open-profile-button {
+    color: $azure;
+  }
+
+  &__edit-employee-link {
+    color: $cyan;
+  }
+}

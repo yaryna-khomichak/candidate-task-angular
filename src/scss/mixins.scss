@@ -1,0 +1,13 @@
+@mixin font-style(
+  $size,
+  $weight: normal,
+  $color: #3c4142,
+  $family: system-ui,
+  $line: 1.5
+) {
+  font-size: $size;
+  font-weight: $weight;
+  font-family: $family;
+  line-height: $line;
+  color: $color;
+}
