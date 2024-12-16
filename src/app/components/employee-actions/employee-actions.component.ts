@@ -6,6 +6,7 @@ import {
   Input,
 } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
 import { MaterialModule } from 'src/app/material.module';
 import { Employee } from 'src/app/models';
 
@@ -22,6 +23,13 @@ export class EmployeeActionsComponent {
 
   @Input() employee!: Employee;
 
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  openEmployeeProfile(): void {}
+  constructor(private dialog: MatDialog) {}
+
+  openEmployeeProfile(): void {
+    // this.dialog.open(EmployeeProfileComponent, {
+    //   data: {
+    //     employee: this.employee,
+    //   },
+    // });
+  }
 }

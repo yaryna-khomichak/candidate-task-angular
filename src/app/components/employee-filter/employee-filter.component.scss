@@ -1,0 +1,74 @@
+@import 'src/scss/colors.scss';
+
+.employee-filter {
+  padding: 16px 64px;
+  display: flex;
+
+  &__filter-type {
+    flex-basis: 25%;
+  }
+
+  &__filter-value {
+    flex-basis: 75%;
+  }
+
+  &__form {
+    display: flex;
+    flex-grow: 1;
+    border-radius: 8px;
+    background-color: $white;
+
+    .mdc-text-field--outlined:not(.mdc-text-field--disabled)
+      .mdc-notched-outline__leading,
+    .mdc-text-field--outlined:not(.mdc-text-field--disabled)
+      .mdc-notched-outline__notch,
+    .mdc-text-field--outlined:not(.mdc-text-field--disabled)
+      .mdc-notched-outline__trailing {
+      border-color: transparent;
+    }
+
+    .mdc-text-field--outlined.mdc-text-field--disabled
+      .mdc-notched-outline__leading,
+    .mdc-text-field--outlined.mdc-text-field--disabled
+      .mdc-notched-outline__notch,
+    .mdc-text-field--outlined.mdc-text-field--disabled
+      .mdc-notched-outline__trailing {
+      border-color: transparent;
+    }
+
+    /* Change the border focused color */
+    .mdc-text-field--outlined:not(
+        .mdc-text-field--disabled
+      ).mdc-text-field--focused
+      .mdc-notched-outline__leading,
+    .mdc-text-field--outlined:not(
+        .mdc-text-field--disabled
+      ).mdc-text-field--focused
+      .mdc-notched-outline__notch,
+    .mdc-text-field--outlined:not(
+        .mdc-text-field--disabled
+      ).mdc-text-field--focused
+      .mdc-notched-outline__trailing {
+      border-color: transparent;
+    }
+
+    /* Change the border hover color */
+    .mdc-text-field--outlined:not(.mdc-text-field--disabled):not(
+        .mdc-text-field--focused
+      ):hover
+      .mdc-notched-outline
+      .mdc-notched-outline__leading,
+    .mdc-text-field--outlined:not(.mdc-text-field--disabled):not(
+        .mdc-text-field--focused
+      ):hover
+      .mdc-notched-outline
+      .mdc-notched-outline__notch,
+    .mdc-text-field--outlined:not(.mdc-text-field--disabled):not(
+        .mdc-text-field--focused
+      ):hover
+      .mdc-notched-outline
+      .mdc-notched-outline__trailing {
+      border-color: transparent;
+    }
+  }
+}

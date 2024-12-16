@@ -16,7 +16,6 @@ import { EmployeeListItemComponent } from '../employee-list-item';
 })
 export class EmployeeListComponent {
   @HostBinding('class.employee-list') hostClass = true;
-
   employees$: Observable<Employee[] | undefined>;
 
   constructor(private store: Store<{ employee: EmployeeState }>) {
