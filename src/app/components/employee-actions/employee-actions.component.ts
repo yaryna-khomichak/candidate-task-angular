@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { MaterialModule } from 'src/app/material.module';
 import { Employee } from 'src/app/models';
+import { EmployeeProfileComponent } from '../employee-profile';
 
 @Component({
   selector: 'app-employee-actions',
@@ -26,10 +27,10 @@ export class EmployeeActionsComponent {
   constructor(private dialog: MatDialog) {}
 
   openEmployeeProfile(): void {
-    // this.dialog.open(EmployeeProfileComponent, {
-    //   data: {
-    //     employee: this.employee,
-    //   },
-    // });
+    this.dialog.open(EmployeeProfileComponent, {
+      data: {
+        employee: this.employee,
+      },
+    });
   }
 }

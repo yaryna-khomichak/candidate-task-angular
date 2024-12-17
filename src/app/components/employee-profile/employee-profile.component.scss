@@ -1,0 +1,70 @@
+@import 'src/scss/colors.scss';
+@import 'src/scss/variables.scss';
+@import 'src/scss/mixins.scss';
+
+.employee-profile {
+  display: flex !important;
+  flex-direction: column;
+  padding: $gap-md;
+
+  &__title {
+    h3 {
+      @include font-style(26px, 500, $nickel);
+
+      margin: 0;
+    }
+
+    a {
+      color: $cyan;
+    }
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 96px;
+  }
+
+  &__photo {
+    width: 300px;
+    height: 300px;
+  }
+
+  &__name {
+    @include font-style(20px, 500, $cyan);
+
+    margin: $gap-md 0;
+  }
+
+  &__email {
+    @include font-style(13px, normal, $cyan);
+
+    a {
+      @include font-style(13px, normal, $cyan);
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      @include font-style(13px, normal, $nickel);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: $gap-sm;
+
+      mat-icon {
+        margin-right: $gap-sm;
+      }
+    }
+  }
+}
