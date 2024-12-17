@@ -2,11 +2,9 @@
 @import 'src/scss/variables.scss';
 
 .employee-list {
-  ul {
-    list-style-type: none;
-    padding: $gap-lg;
-    margin: 0;
-    background: $white;
-    border-radius: 8px;
-  }
+  list-style-type: none;
+  padding: $gap-lg;
+  margin: 0;
+  background: $white;
+  border-radius: 8px;
 }

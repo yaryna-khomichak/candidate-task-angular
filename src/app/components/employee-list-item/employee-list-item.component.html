@@ -1,19 +1,21 @@
-<img class="employee-list-item__photo" alt="" [src]="employee.photo" />
-<h3 class="employee-list-item__name">
-  {{ employee.name }}
-</h3>
-<a class="employee-list-item__email" href="mailto:{{ employee.email }}">
-  {{ employee.email }}
-</a>
-<p class="employee-list-item__role">
-  {{ employee.role }}
-</p>
-<p
-  class="employee-list-item__status employee-list-item__status--{{
-    employee.status.toLocaleLowerCase()
-  }}"
->
-  <span></span>
-  {{ employee.status }}
-</p>
-<app-employee-actions [employee]="employee"></app-employee-actions>
+<div class="employee-list-item">
+  <img class="employee-list-item__photo" alt="" [src]="employee.photo" />
+  <h3 class="employee-list-item__name">
+    {{ employee.name }}
+  </h3>
+  <a class="employee-list-item__email" href="mailto:{{ employee.email }}">
+    {{ employee.email }}
+  </a>
+  <p class="employee-list-item__role">
+    {{ employee.role }}
+  </p>
+  <p
+    class="employee-list-item__status employee-list-item__status--{{
+      employee.status.toLocaleLowerCase()
+    }}"
+  >
+    <span></span>
+    {{ employee.status }}
+  </p>
+  <app-employee-actions [employee]="employee"></app-employee-actions>
+</div>

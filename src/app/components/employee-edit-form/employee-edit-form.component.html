@@ -1,4 +1,4 @@
-<ng-container *ngIf="employee$ | async as employee">
+<div *ngIf="employee$ | async as employee" class="employee-edit-form">
   <div class="card">
     <h3 class="card__header">Profile Picture</h3>
     <div class="card__body">
@@ -76,11 +76,11 @@
       <button
         mat-raised-button
         color="primary"
-        [disabled]="!employeeForm.valid"
+        [disabled]="employeeForm.invalid || employeeForm.untouched"
         (click)="updateEmployee()"
       >
         Update Employee
       </button>
     </div>
   </div>
-</ng-container>
+</div>

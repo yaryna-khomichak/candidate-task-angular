@@ -1,4 +1,4 @@
-<ul *ngIf="employees$ | async as employees">
+<ul *ngIf="employees$ | async as employees" class="employee-list">
   <li *ngFor="let employee of employees">
     <app-employee-list-item [employee]="employee"></app-employee-list-item>
   </li>

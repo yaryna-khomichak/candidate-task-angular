@@ -1,10 +1,5 @@
 import { CommonModule } from '@angular/common';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  HostBinding,
-  Inject,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from 'src/app/material.module';
 import { Employee } from 'src/app/models';
@@ -19,7 +14,5 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EmployeeProfileComponent {
-  @HostBinding('class.employee-profile') hostClass = true;
-
   constructor(@Inject(MAT_DIALOG_DATA) public data: { employee: Employee }) {}
 }

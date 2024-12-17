@@ -1,4 +1,4 @@
-<ng-container *ngIf="data.employee as employee">
+<div *ngIf="data.employee as employee" class="employee-profile">
   <div class="employee-profile__title">
     <h3>Profile</h3>
     <a mat-icon-button mat-dialog-close [routerLink]="['/edit', employee.id]">
@@ -37,4 +37,4 @@
       </li>
     </ul>
   </div>
-</ng-container>
+</div>

@@ -1,10 +1,5 @@
 import { CommonModule } from '@angular/common';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  HostBinding,
-  OnInit,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -19,7 +14,6 @@ import { MaterialModule } from 'src/app/material.module';
 import { Employee, EmployeeStatus } from 'src/app/models';
 import {
   EmployeeState,
-  loadEmployees,
   selectEmployeeById,
   updateEmployee,
 } from 'src/app/store';
@@ -33,8 +27,6 @@ import {
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EmployeeEditFormComponent implements OnInit {
-  @HostBinding('class.employee-edit-form') hostClass = true;
-
   employee$!: Observable<Employee | undefined>;
   employeeForm: FormGroup;
   employeeStatus: EmployeeStatus[] = [
@@ -48,7 +40,6 @@ export class EmployeeEditFormComponent implements OnInit {
     private store: Store<{ employee: EmployeeState }>,
     private formBuilder: FormBuilder
   ) {
-    this.store.dispatch(loadEmployees());
     this.employeeForm = this.formBuilder.group({
       id: [''],
       name: ['', [Validators.required]],

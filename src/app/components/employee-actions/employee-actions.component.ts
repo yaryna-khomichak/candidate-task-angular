@@ -1,10 +1,5 @@
 import { CommonModule } from '@angular/common';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  HostBinding,
-  Input,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { MaterialModule } from 'src/app/material.module';
@@ -20,8 +15,6 @@ import { EmployeeProfileComponent } from '../employee-profile';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EmployeeActionsComponent {
-  @HostBinding('class.employee-actions') hostClass = true;
-
   @Input() employee!: Employee;
 
   constructor(private dialog: MatDialog) {}

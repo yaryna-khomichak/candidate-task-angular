@@ -4,13 +4,15 @@ import * as EmployeeActions from '../actions';
 
 export interface EmployeeState {
   employees: Employee[];
-  loading: boolean;
+  loadingEmployees: boolean;
+  updatingEmployees: boolean;
   error: string | null;
 }
 
 export const initialState: EmployeeState = {
   employees: [],
-  loading: false,
+  loadingEmployees: false,
+  updatingEmployees: false,
   error: null,
 };
 
@@ -18,36 +20,35 @@ export const employeeReducer = createReducer(
   initialState,
   on(EmployeeActions.loadEmployees, (state) => ({
     ...state,
-    loading: true,
+    loadingEmployees: true,
     error: null,
   })),
   on(EmployeeActions.loadEmployeesSuccess, (state, { employees }) => ({
     ...state,
     employees,
-    loading: false,
+    loadingEmployees: false,
     error: null,
   })),
   on(EmployeeActions.loadEmployeesFail, (state, { error }) => ({
     ...state,
     employees: [],
-    loading: false,
+    loadingEmployees: false,
     error,
   })),
   on(EmployeeActions.updateEmployee, (state) => ({
     ...state,
-    loading: true,
+    updatingEmployees: true,
     error: null,
   })),
   on(EmployeeActions.updateEmployeeSuccess, (state, { employees }) => ({
     ...state,
     employees,
-    loading: false,
+    updatingEmployees: false,
     error: null,
   })),
-  on(EmployeeActions.loadEmployeesFail, (state, { error }) => ({
+  on(EmployeeActions.updateEmployeeFail, (state, { error }) => ({
     ...state,
-    employees: [],
-    loading: false,
+    updatingEmployees: false,
     error,
   }))
 );

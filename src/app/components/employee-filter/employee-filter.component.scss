@@ -1,74 +1,27 @@
 @import 'src/scss/colors.scss';
+@import 'src/scss/variables.scss';
 
-.employee-filter {
+:host {
   padding: 16px 64px;
   display: flex;
+}
 
-  &__filter-type {
+.employee-filter-form {
+  display: flex;
+  flex-grow: 1;
+  gap: $gap-sm;
+
+  &__select-type {
     flex-basis: 25%;
   }
 
-  &__filter-value {
+  &__select-value {
     flex-basis: 75%;
   }
 
-  &__form {
-    display: flex;
-    flex-grow: 1;
-    border-radius: 8px;
+  &__select-value,
+  &__select-type {
     background-color: $white;
-
-    .mdc-text-field--outlined:not(.mdc-text-field--disabled)
-      .mdc-notched-outline__leading,
-    .mdc-text-field--outlined:not(.mdc-text-field--disabled)
-      .mdc-notched-outline__notch,
-    .mdc-text-field--outlined:not(.mdc-text-field--disabled)
-      .mdc-notched-outline__trailing {
-      border-color: transparent;
-    }
-
-    .mdc-text-field--outlined.mdc-text-field--disabled
-      .mdc-notched-outline__leading,
-    .mdc-text-field--outlined.mdc-text-field--disabled
-      .mdc-notched-outline__notch,
-    .mdc-text-field--outlined.mdc-text-field--disabled
-      .mdc-notched-outline__trailing {
-      border-color: transparent;
-    }
-
-    /* Change the border focused color */
-    .mdc-text-field--outlined:not(
-        .mdc-text-field--disabled
-      ).mdc-text-field--focused
-      .mdc-notched-outline__leading,
-    .mdc-text-field--outlined:not(
-        .mdc-text-field--disabled
-      ).mdc-text-field--focused
-      .mdc-notched-outline__notch,
-    .mdc-text-field--outlined:not(
-        .mdc-text-field--disabled
-      ).mdc-text-field--focused
-      .mdc-notched-outline__trailing {
-      border-color: transparent;
-    }
-
-    /* Change the border hover color */
-    .mdc-text-field--outlined:not(.mdc-text-field--disabled):not(
-        .mdc-text-field--focused
-      ):hover
-      .mdc-notched-outline
-      .mdc-notched-outline__leading,
-    .mdc-text-field--outlined:not(.mdc-text-field--disabled):not(
-        .mdc-text-field--focused
-      ):hover
-      .mdc-notched-outline
-      .mdc-notched-outline__notch,
-    .mdc-text-field--outlined:not(.mdc-text-field--disabled):not(
-        .mdc-text-field--focused
-      ):hover
-      .mdc-notched-outline
-      .mdc-notched-outline__trailing {
-      border-color: transparent;
-    }
+    border-radius: 8px;
   }
 }

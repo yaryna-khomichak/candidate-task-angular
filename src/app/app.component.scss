@@ -1,5 +1,8 @@
-app-root {
+@import 'src/scss/variables.scss';
+
+:host {
   max-width: 1000px;
   display: block;
   margin: 0 auto;
+  padding: $gap-md;
 }

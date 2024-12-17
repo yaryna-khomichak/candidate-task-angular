@@ -2,7 +2,6 @@ import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
-  HostBinding,
   OnDestroy,
   OnInit,
 } from '@angular/core';
@@ -22,8 +21,6 @@ import { EmployeeState, setFilterType, setFilterValue } from 'src/app/store';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EmployeeFilterComponent implements OnInit, OnDestroy {
-  @HostBinding('class.employee-filter') hostClass = true;
-
   filterByForm: FormGroup;
   filterTypes = [FilterType.EMAIL, FilterType.NAME, FilterType.STATUS];
 

@@ -1,5 +1,5 @@
-<form class="employee-filter__form" [formGroup]="filterByForm">
-  <mat-form-field class="employee-filter__filter-type">
+<form class="employee-filter-form" [formGroup]="filterByForm">
+  <mat-form-field class="employee-filter-form__select-type">
     <mat-label>Filter By</mat-label>
     <mat-select formControlName="filterType">
       <mat-option *ngFor="let type of filterTypes" [value]="type">
@@ -7,7 +7,7 @@
       </mat-option>
     </mat-select>
   </mat-form-field>
-  <mat-form-field class="employee-filter__filter-value">
+  <mat-form-field class="employee-filter-form__select-value">
     <input matInput formControlName="filterValue" placeholder="Search ..." />
   </mat-form-field>
 </form>

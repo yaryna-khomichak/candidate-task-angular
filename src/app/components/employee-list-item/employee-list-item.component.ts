@@ -1,10 +1,5 @@
 import { CommonModule } from '@angular/common';
-import {
-  ChangeDetectionStrategy,
-  Component,
-  HostBinding,
-  Input,
-} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { MaterialModule } from 'src/app/material.module';
 import { Employee } from 'src/app/models';
 import { EmployeeActionsComponent } from '../employee-actions';
@@ -18,7 +13,5 @@ import { EmployeeActionsComponent } from '../employee-actions';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class EmployeeListItemComponent {
-  @HostBinding('class.employee-list-item') hostClass = true;
-
   @Input() employee!: Employee;
 }
