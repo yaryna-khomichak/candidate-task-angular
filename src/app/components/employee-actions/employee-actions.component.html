@@ -5,6 +5,10 @@
 >
   <mat-icon>visibility</mat-icon>
 </button>
-<a mat-icon-button class="employee-actions__edit-employee-link">
+<a
+  mat-icon-button
+  class="employee-actions__edit-employee-link"
+  [routerLink]="['/edit', employee.id]"
+>
   <mat-icon>drive_file_rename_outline</mat-icon>
 </a>

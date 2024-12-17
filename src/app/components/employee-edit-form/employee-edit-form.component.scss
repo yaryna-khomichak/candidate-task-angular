@@ -1,0 +1,74 @@
+@import 'src/scss/colors.scss';
+@import 'src/scss/variables.scss';
+@import 'src/scss/mixins.scss';
+
+.employee-edit-form {
+  .card {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: $gap-md;
+
+    &__header {
+      @include font-style(16px, 500);
+
+      padding: $gap-md;
+      background-color: $cultured;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+
+    &__body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: $gap-md;
+      background-color: $white;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+
+      img {
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .form-grid {
+    display: grid;
+    width: 100%;
+    padding: 16px;
+    grid-template-columns: 20% 1fr;
+    grid-gap: 20px;
+    grid-template-areas:
+      'id name'
+      'status role'
+      'joiningDate email';
+  }
+
+  .form-grid {
+    &__id {
+      grid-area: id;
+    }
+    &__name {
+      grid-area: name;
+    }
+    &__role {
+      grid-area: role;
+    }
+    &__status {
+      grid-area: status;
+    }
+    &__email {
+      grid-area: email;
+    }
+    &__joining-date {
+      grid-area: joiningDate;
+    }
+  }
+
+  button {
+    width: 100%;
+  }
+}

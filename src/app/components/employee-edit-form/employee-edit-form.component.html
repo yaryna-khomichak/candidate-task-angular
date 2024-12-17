@@ -1,0 +1,86 @@
+<ng-container *ngIf="employee$ | async as employee">
+  <div class="card">
+    <h3 class="card__header">Profile Picture</h3>
+    <div class="card__body">
+      <img alt="" [src]="employee.photo" />
+    </div>
+  </div>
+  <div class="card">
+    <h3 class="card__header">Employee Details</h3>
+    <div class="card__body">
+      <form [formGroup]="employeeForm" class="form-grid">
+        <mat-form-field appearance="outline" class="form-grid__id">
+          <mat-label>ID</mat-label>
+          <input
+            matInput
+            readonly
+            formControlName="id"
+            placeholder="Enter ID"
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-grid__name">
+          <mat-label>Name</mat-label>
+          <input
+            matInput
+            maxlength="30"
+            formControlName="name"
+            placeholder="Enter Name"
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-grid__status">
+          <mat-label>Status</mat-label>
+          <mat-select formControlName="status">
+            <mat-option *ngFor="let status of employeeStatus" [value]="status">
+              {{ status }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-grid__role">
+          <mat-label>Role</mat-label>
+          <input
+            matInput
+            maxlength="30"
+            formControlName="role"
+            placeholder="Enter Role"
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-grid__email">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            maxlength="30"
+            formControlName="email"
+            placeholder="Enter Email"
+          />
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="form-grid__joining-date">
+          <mat-label>Joining Date</mat-label>
+          <input
+            matInput
+            [matDatepicker]="picker"
+            formControlName="joiningDate"
+            placeholder="Enter Joining Date"
+          />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </form>
+      <button
+        mat-raised-button
+        color="primary"
+        [disabled]="!employeeForm.valid"
+        (click)="updateEmployee()"
+      >
+        Update Employee
+      </button>
+    </div>
+  </div>
+</ng-container>

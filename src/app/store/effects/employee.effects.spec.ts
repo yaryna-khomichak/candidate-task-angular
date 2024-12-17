@@ -7,6 +7,7 @@ import { EmployeeStatus } from 'src/app/models';
 import * as EmployeeActions from '../actions';
 import { hot, cold } from 'jasmine-marbles';
 import { Action } from '@ngrx/store';
+import { RouterTestingModule } from '@angular/router/testing';
 
 interface MockEmployeeService {
   getEmployees: jasmine.Spy;
@@ -23,6 +24,7 @@ describe('EmployeeEffects', () => {
       providers: [
         EmployeeEffects,
         provideMockActions(() => actions$),
+        RouterTestingModule,
         {
           provide: EmployeeService,
           useValue: jasmine.createSpyObj('EmployeeService', [

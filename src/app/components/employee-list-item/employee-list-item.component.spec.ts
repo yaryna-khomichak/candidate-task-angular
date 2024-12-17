@@ -4,6 +4,7 @@ import { MaterialModule } from 'src/app/material.module';
 import { EmployeeListItemComponent } from './employee-list-item.component';
 import { EmployeeActionsComponent } from '../employee-actions';
 import { By } from '@angular/platform-browser';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('EmployeeListItemComponent', () => {
   let component: EmployeeListItemComponent;
@@ -16,6 +17,7 @@ describe('EmployeeListItemComponent', () => {
         MaterialModule,
         EmployeeListItemComponent,
         EmployeeActionsComponent,
+        RouterTestingModule,
       ],
     }).compileComponents();
   });
@@ -39,7 +41,7 @@ describe('EmployeeListItemComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('rebders employee details correctly', () => {
+  it('renders employee details correctly', () => {
     const nameElement = fixture.debugElement.query(
       By.css('.employee-list-item__name')
     );

@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { catchError, map, mergeMap, of } from 'rxjs';
+import { catchError, map, mergeMap, of, tap } from 'rxjs';
 import { EmployeeService } from 'src/app/services';
 import * as EmployeeActions from '../actions';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class EmployeeEffects {
@@ -30,6 +31,7 @@ export class EmployeeEffects {
           map((employees) =>
             EmployeeActions.updateEmployeeSuccess({ employees })
           ),
+          tap(() => this.router.navigate(['/'])),
           catchError((error) =>
             of(EmployeeActions.updateEmployeeFail({ error }))
           )
@@ -40,6 +42,7 @@ export class EmployeeEffects {
 
   constructor(
     private actions$: Actions,
-    private employeeService: EmployeeService
+    private employeeService: EmployeeService,
+    private router: Router
   ) {}
 }

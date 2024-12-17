@@ -6,6 +6,7 @@ import { EmployeeListItemComponent } from '../employee-list-item';
 import { MockStore, provideMockStore } from '@ngrx/store/testing';
 import { By } from '@angular/platform-browser';
 import { selectFilteredEmployees } from 'src/app/store';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('EmployeeListComponent', () => {
   let component: EmployeeListComponent;
@@ -32,6 +33,7 @@ describe('EmployeeListComponent', () => {
         MaterialModule,
         EmployeeListComponent,
         EmployeeListItemComponent,
+        RouterTestingModule,
       ],
       providers: [provideMockStore({ initialState })],
     }).compileComponents();

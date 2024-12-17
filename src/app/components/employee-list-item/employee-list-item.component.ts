@@ -7,7 +7,7 @@ import {
 } from '@angular/core';
 import { MaterialModule } from 'src/app/material.module';
 import { Employee } from 'src/app/models';
-import { EmployeeActionsComponent } from '../employee-actions/employee-actions.component';
+import { EmployeeActionsComponent } from '../employee-actions';
 
 @Component({
   selector: 'app-employee-list-item',

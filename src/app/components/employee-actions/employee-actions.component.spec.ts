@@ -3,6 +3,7 @@ import { EmployeeActionsComponent } from './employee-actions.component';
 import { Employee, EmployeeStatus } from 'src/app/models';
 import { MaterialModule } from 'src/app/material.module';
 import { By } from '@angular/platform-browser';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('EmployeeActionsComponent', () => {
   let component: EmployeeActionsComponent;
@@ -11,7 +12,7 @@ describe('EmployeeActionsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MaterialModule, EmployeeActionsComponent],
+      imports: [MaterialModule, EmployeeActionsComponent, RouterTestingModule],
     }).compileComponents();
   });
 
