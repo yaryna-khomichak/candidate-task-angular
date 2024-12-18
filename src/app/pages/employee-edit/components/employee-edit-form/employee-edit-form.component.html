@@ -1,11 +1,16 @@
 <div *ngIf="employee$ | async as employee" class="employee-edit-form">
-  <div class="card">
-    <h3 class="card__header">Profile Picture</h3>
+  <div class="card card--photo">
+    <h3 class="card__header">
+      Profile Picture
+      <a mat-icon-button [routerLink]="['/']">
+        <mat-icon>undo</mat-icon>
+      </a>
+    </h3>
     <div class="card__body">
       <img alt="" [src]="employee.photo" />
     </div>
   </div>
-  <div class="card">
+  <div class="card card--form">
     <h3 class="card__header">Employee Details</h3>
     <div class="card__body">
       <form [formGroup]="employeeForm" class="form-grid">

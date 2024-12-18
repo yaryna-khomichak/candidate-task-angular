@@ -3,10 +3,12 @@
 @import 'src/scss/mixins.scss';
 
 .employee-edit-form {
+  display: flex;
+  gap: $gap-md;
+
   .card {
     display: flex;
     flex-direction: column;
-    margin-bottom: $gap-md;
 
     &__header {
       @include font-style(16px, 500);
@@ -15,6 +17,10 @@
       background-color: $cultured;
       border-top-left-radius: 8px;
       border-top-right-radius: 8px;
+
+      a {
+        display: none;
+      }
     }
 
     &__body {
@@ -33,13 +39,17 @@
         border-radius: 50%;
       }
     }
+
+    &--form {
+      flex-grow: 1;
+    }
   }
 
   .form-grid {
     display: grid;
     width: 100%;
     padding: 16px;
-    grid-template-columns: 10% 20% 1fr;
+    grid-template-columns: 15% 15% 1fr;
     grid-gap: 20px;
     grid-template-areas:
       'id name name'
@@ -82,7 +92,11 @@
   }
 
   @media (max-width: 768px) {
+    height: 100%;
+    flex-direction: column;
+
     .form-grid {
+      overflow-y: scroll;
       grid-template-columns: 1fr;
       grid-template-areas:
         'id'
@@ -93,6 +107,39 @@
         'email'
         'updateButton'
         'cancelLink';
+    }
+
+    .card {
+      &--form {
+        overflow: hidden;
+        flex-grow: 1;
+
+        .card__body {
+          overflow: hidden;
+        }
+      }
+
+      &--photo {
+        .card__header {
+          display: flex;
+          justify-content: space-between;
+
+          a {
+            display: flex;
+            padding: 0;
+            height: auto;
+            width: auto;
+          }
+        }
+        .card__body {
+          padding: 0;
+
+          img {
+            width: 200px;
+            height: 200px;
+          }
+        }
+      }
     }
   }
 }
