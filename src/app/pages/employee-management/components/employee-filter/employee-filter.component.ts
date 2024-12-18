@@ -61,6 +61,9 @@ export class EmployeeFilterComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    this.filterByForm.get('filterType')?.setValue(undefined);
+    this.filterByForm.get('filterValue')?.setValue('');
+
     this.destoroy$.next();
     this.destoroy$.complete();
   }
