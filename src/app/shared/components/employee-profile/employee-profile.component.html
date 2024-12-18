@@ -1,0 +1,44 @@
+<div *ngIf="data.employee as employee" class="employee-profile">
+  <div class="employee-profile__title">
+    <h3>Profile</h3>
+    <a
+      mat-icon-button
+      mat-dialog-close
+      [routerLink]="['/employee-managment/edit', employee.id]"
+    >
+      <mat-icon>drive_file_rename_outline</mat-icon>
+    </a>
+  </div>
+  <div class="employee-profile__content">
+    <img class="employee-profile__photo" alt="" [src]="employee.photo" />
+    <h3 class="employee-profile__name">
+      {{ employee.name }}
+    </h3>
+    <ul>
+      <li class="employee-profile__role">
+        <mat-icon>work_outline</mat-icon>
+        <span>
+          {{ employee.role }}
+        </span>
+      </li>
+      <li class="employee-profile__joiningDate">
+        <mat-icon>calendar_today</mat-icon>
+        <span>
+          {{ employee.joiningDate | date: 'dd/MM/yyyy' }}
+        </span>
+      </li>
+      <li class="employee-profile__status">
+        <mat-icon>check_circle_outline</mat-icon>
+        <span>
+          {{ employee.status }}
+        </span>
+      </li>
+      <li class="employee-profile__email">
+        <mat-icon> mail_outline</mat-icon>
+        <a href="mailto:{{ employee.email }}">
+          {{ employee.email }}
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

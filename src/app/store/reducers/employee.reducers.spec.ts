@@ -1,16 +1,17 @@
-import { EmployeeStatus } from 'src/app/models';
 import * as EmployeeActions from '../actions';
 import { employeeReducer, initialState } from './employee.reducers';
+import { mockEmployee } from 'src/app/testing/mocks';
 
 describe('employeeReducer', () => {
   describe('loadEmployees', () => {
-    it('should set loading tot true and clear error', () => {
+    it('should set loading as true and clear error', () => {
       const action = EmployeeActions.loadEmployees();
       const state = employeeReducer(initialState, action);
 
       expect(state).toEqual({
         employees: [],
-        loading: true,
+        loadingEmployees: true,
+        updatingEmployees: false,
         error: null,
       });
     });
@@ -18,16 +19,7 @@ describe('employeeReducer', () => {
 
   describe('loadEmployeesSuccess', () => {
     it('should populate employees, set loading to false, and clear error', () => {
-      const newEmployees = [
-        {
-          id: '5',
-          name: 'New Name',
-          email: 'eve.foster@example.com',
-          role: 'Accountant',
-          status: EmployeeStatus.ACTIVE,
-          joiningDate: '2021-03-05',
-        },
-      ];
+      const newEmployees = [{ ...mockEmployee, name: 'New Name' }];
       const action = EmployeeActions.loadEmployeesSuccess({
         employees: newEmployees,
       });
@@ -35,7 +27,8 @@ describe('employeeReducer', () => {
 
       expect(state).toEqual({
         employees: newEmployees,
-        loading: false,
+        loadingEmployees: false,
+        updatingEmployees: false,
         error: null,
       });
     });
@@ -48,7 +41,8 @@ describe('employeeReducer', () => {
 
       expect(state).toEqual({
         employees: [],
-        loading: false,
+        loadingEmployees: false,
+        updatingEmployees: false,
         error: 'Error',
       });
     });

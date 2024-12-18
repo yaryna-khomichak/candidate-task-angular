@@ -12,6 +12,8 @@ import {
   employeeReducer,
 } from './store';
 import { MaterialModule } from './material.module';
+import { environment } from 'src/environments/environment';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,6 +26,12 @@ import { MaterialModule } from './material.module';
       filter: employeeFilterReducer,
     }),
     EffectsModule.forRoot([EmployeeEffects]),
+    !environment.production
+      ? StoreDevtoolsModule.instrument({
+          maxAge: 25,
+          logOnly: environment.production,
+        })
+      : [],
     MaterialModule,
   ],
   bootstrap: [AppComponent],

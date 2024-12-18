@@ -3,11 +3,11 @@ import { EmployeeEffects } from './employee.effects';
 import { TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { EmployeeService } from 'src/app/services';
-import { EmployeeStatus } from 'src/app/models';
 import * as EmployeeActions from '../actions';
 import { hot, cold } from 'jasmine-marbles';
 import { Action } from '@ngrx/store';
 import { RouterTestingModule } from '@angular/router/testing';
+import { mockEmployee, mockEmployees } from 'src/app/testing/mocks';
 
 interface MockEmployeeService {
   getEmployees: jasmine.Spy;
@@ -41,16 +41,7 @@ describe('EmployeeEffects', () => {
 
   describe('loadEmployees$', () => {
     it('should return a loadEmployeeSuccess, with the employees, on success', () => {
-      const employees = [
-        {
-          id: '5',
-          name: 'Eve Foster',
-          email: 'eve.foster@example.com',
-          role: 'Accountant',
-          status: EmployeeStatus.ACTIVE,
-          joiningDate: '2021-03-05',
-        },
-      ];
+      const employees = mockEmployees;
       const action = EmployeeActions.loadEmployees();
       const completion = EmployeeActions.loadEmployeesSuccess({ employees });
 
@@ -84,14 +75,7 @@ describe('EmployeeEffects', () => {
 
   describe('updateEmployee$', () => {
     it('should return a updateEmployeeSuccess, with the employees, on success', () => {
-      const employee = {
-        id: '5',
-        name: 'New Name',
-        email: 'eve.foster@example.com',
-        role: 'Accountant',
-        status: EmployeeStatus.ACTIVE,
-        joiningDate: '2021-03-05',
-      };
+      const employee = mockEmployee;
       const action = EmployeeActions.updateEmployee({ employee });
       const completion = EmployeeActions.updateEmployeeSuccess({
         employees: [employee],
@@ -111,12 +95,8 @@ describe('EmployeeEffects', () => {
     it('should return a updateEmployeeFail, with the error, on fail', () => {
       const error = 'Error';
       const employee = {
-        id: '5',
+        ...mockEmployee,
         name: 'New Name',
-        email: 'eve.foster@example.com',
-        role: 'Accountant',
-        status: EmployeeStatus.ACTIVE,
-        joiningDate: '2021-03-05',
       };
       const action = EmployeeActions.updateEmployee({ employee });
       const completion = EmployeeActions.updateEmployeeFail({ error });

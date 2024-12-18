@@ -1,1 +1,1 @@
-export * from './employee-list';
+export * from './employee-list-response';
