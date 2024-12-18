@@ -1,65 +1,64 @@
-## Senior Frontend Engineer Assessment Task
+# Employee Managment System
 
-### **Overview**
+This project is an Angular-based web application designed to manage employee information efficiently. It features functionalities to view, edit and manage employee profiles as part of an enterprise-grade managment system.
 
-Create an employee management application using Angular, RxJS, and NgRx. The application should allow users to browse a list of
-users, view user details, and edit user details. The goal is to demonstrate your expertise in Angular architecture,
-state management, reactive programming, and writing unit tests.
+## Key Features
 
-### **Project Requirements**
+- **Employee List**: View a list of all emploees.
+- **Edit Employee**: Edit details of existing employees.
+- **Employee Details**: Detailed view of each employee`s profile.
+- **Responsive Layout**: Adapts smoothly to different screen sizes.
 
-**Application Features**
+## Technical Stack
 
-- **User List:**
-  - Display a list of employees with basic information (name, email, role, and status).
-    - You can use mock data or fetch data from a mock API.
-  - Include a way to filter users, e.g. by name, email, or status.
+- **Framework**: Angular
+- **UI Components**: Angular Material and custom components
+- **Routing**: Angular Router for navigation and lazy loading modules.
+- **State Management**: NgRx for managing the state of the app in a reactive way.
 
-- **User Details:**
-  - Display detailed information about a selected user (name, email, role, status, joining date).
-  - Include a way to edit the user details.
+## Features
 
-**State Management with NgRx**
+Before you begin, make sure you have the following installed:
+- Node.js (>=12.x)
+- npm (Node Package Manager)
+- Angular CLI (This project assumes you have the Angular CLI installed for Angular development)
 
-- Implement global state management for users.
-- Create actions, reducers, and selectors for managing user state.
+## Getting Started
 
-**Reactive Programming with RxJS**
+Folow these steps to set up and run the project locally:
 
-- Use RxJS operators to manage state, transform data streams, and handle asynchronous operations.
+### Clone the repository
 
-**Unit Testing**
+`git clone https://github.com/yaryna-khomichak/candidate-task-angular.git`
 
-- Use Jasmine and Karma to write a few unit tests.
+### Navigate to the project directory
 
-**Styling**
+`cd candidate-task-angular` 
 
-- Use SCSS for basic styling.
-- You may use Angular Material or any other UI library for a polished UI.
+### Install dependencies
 
-**Documentation**
+`npm install`
 
-- Provide a README file with instructions on how to set up and run the application.
+### Development server
 
-### **Optional Features**
+Run the following command to start the development server:
 
-- **Persistent Storage:** Use local storage or session storage to persist state across page reloads.
+`npm run start`
 
-### **Submission Instructions**
+Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-1. Fork the repository.
-2. Commit your code regularly to show your progress.
-3. Ensure that the application runs without errors.
-4. Submit the GitHub repository link with your final submission.
+### Run unit tests
 
-### **Evaluation Criteria**
+`npm run test`
 
-- **Code Quality:** Clean, readable, and maintainable code.
-- **Application Structure:** Proper use of Angular modules, components, services, and NgRx.
-- **State Management:** Effective use of NgRx for global state management.
-- **Reactive Programming:** Demonstration of RxJS for handling data streams and asynchronous operations.
-- **Functionality:** Implementation of all required features and optional features.
-- **Testing:** Coverage and quality of tests.
-- **User Experience:** Aesthetic and functional UI/UX design. Responsive UI is not necessary in this task.
+### Run lint
 
-Good luck! We look forward to reviewing your submission.
+`npm run lint`
+
+### Run unit tests
+
+`npm run test`
+
+### Run formatting
+
+`npm run format`
