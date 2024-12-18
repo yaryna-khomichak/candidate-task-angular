@@ -24,4 +24,13 @@
     background-color: $white;
     border-radius: 8px;
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    &__select-value,
+    &__select-type {
+      flex-grow: 1;
+    }
+  }
 }

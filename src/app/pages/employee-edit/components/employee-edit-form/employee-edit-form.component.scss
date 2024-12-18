@@ -39,36 +39,60 @@
     display: grid;
     width: 100%;
     padding: 16px;
-    grid-template-columns: 20% 1fr;
+    grid-template-columns: 10% 20% 1fr;
     grid-gap: 20px;
     grid-template-areas:
-      'id name'
-      'status role'
-      'joiningDate email';
-  }
+      'id name name'
+      'status status role'
+      'joiningDate joiningDate email'
+      'updateButton updateButton updateButton'
+      'cancelLink cancelLink cancelLink';
 
-  .form-grid {
     &__id {
       grid-area: id;
     }
+
     &__name {
       grid-area: name;
     }
+
     &__role {
       grid-area: role;
     }
+
     &__status {
       grid-area: status;
     }
+
     &__email {
       grid-area: email;
     }
+
     &__joining-date {
       grid-area: joiningDate;
     }
+
+    &__cancel-link {
+      grid-area: cancelLink;
+    }
+
+    &__update-button {
+      grid-area: updateButton;
+    }
   }
 
-  button {
-    width: 100%;
+  @media (max-width: 768px) {
+    .form-grid {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        'id'
+        'name'
+        'status'
+        'role'
+        'joiningDate'
+        'email'
+        'updateButton'
+        'cancelLink';
+    }
   }
 }

@@ -72,15 +72,22 @@
           ></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
+        <a
+          mat-stroked-button
+          class="form-grid__cancel-link"
+          [routerLink]="['/']"
+          >Cancel</a
+        >
+        <button
+          mat-raised-button
+          color="primary"
+          class="form-grid__update-button"
+          [disabled]="employeeForm.invalid || employeeForm.untouched"
+          (click)="updateEmployee()"
+        >
+          Update Employee
+        </button>
       </form>
-      <button
-        mat-raised-button
-        color="primary"
-        [disabled]="employeeForm.invalid || employeeForm.untouched"
-        (click)="updateEmployee()"
-      >
-        Update Employee
-      </button>
     </div>
   </div>
 </div>

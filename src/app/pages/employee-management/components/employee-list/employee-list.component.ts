@@ -16,4 +16,8 @@ export class EmployeeListComponent {
   constructor(private store: Store<{ employee: EmployeeState }>) {
     this.employees$ = this.store.select(selectFilteredEmployees);
   }
+
+  trackById(_: number, employee: Employee): string {
+    return employee.id;
+  }
 }

@@ -1,5 +1,11 @@
-<ul *ngIf="employees$ | async as employees" class="employee-list">
-  <li *ngFor="let employee of employees">
-    <app-employee-list-item [employee]="employee"></app-employee-list-item>
-  </li>
-</ul>
+<ng-container *ngIf="employees$ | async as employees; else noEmployeesFound">
+  <ul *ngIf="employees?.length; else noEmployeesFound" class="employee-list">
+    <li *ngFor="let employee of employees; trackBy: trackById">
+      <app-employee-list-item [employee]="employee"></app-employee-list-item>
+    </li>
+  </ul>
+</ng-container>
+
+<ng-template #noEmployeesFound>
+  <p class="no-found-message">No employees found!</p>
+</ng-template>

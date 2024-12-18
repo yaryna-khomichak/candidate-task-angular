@@ -83,4 +83,13 @@
   &__actions {
     grid-area: actions;
   }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 30% 1fr 10%;
+    grid-template-areas:
+      'photo name actions'
+      'photo email actions'
+      'photo role actions'
+      'photo status actions';
+  }
 }

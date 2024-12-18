@@ -1,10 +1,26 @@
 @import 'src/scss/colors.scss';
 @import 'src/scss/variables.scss';
+@import 'src/scss/mixins.scss';
+
+:host {
+  overflow: hidden;
+}
 
 .employee-list {
   list-style-type: none;
   padding: $gap-lg;
   margin: 0;
+  background: $white;
+  border-radius: 8px;
+  overflow-y: scroll;
+  height: 100%;
+}
+
+.no-found-message {
+  @include font-style(16px, 500);
+
+  padding: $gap-lg;
+  text-align: center;
   background: $white;
   border-radius: 8px;
 }

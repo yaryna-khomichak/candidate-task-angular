@@ -1,13 +1,17 @@
 <div *ngIf="data.employee as employee" class="employee-profile">
-  <div class="employee-profile__title">
-    <h3>Profile</h3>
+  <div class="employee-profile__header">
+    <h3 class="employee-profile__title">Profile</h3>
     <a
       mat-icon-button
       mat-dialog-close
+      class="employee-profile__edit-button"
       [routerLink]="['/employee-managment/edit', employee.id]"
     >
       <mat-icon>drive_file_rename_outline</mat-icon>
     </a>
+    <button mat-icon-button mat-dialog-close>
+      <mat-icon>close</mat-icon>
+    </button>
   </div>
   <div class="employee-profile__content">
     <img class="employee-profile__photo" alt="" [src]="employee.photo" />
