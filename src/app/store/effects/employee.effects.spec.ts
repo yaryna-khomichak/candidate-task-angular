@@ -8,6 +8,8 @@ import { hot, cold } from 'jasmine-marbles';
 import { Action } from '@ngrx/store';
 import { RouterTestingModule } from '@angular/router/testing';
 import { mockEmployee, mockEmployees } from 'src/app/testing/mocks';
+import { MockStore, provideMockStore } from '@ngrx/store/testing';
+import { selectEmployees } from '../selectors';
 
 interface MockEmployeeService {
   getEmployees: jasmine.Spy;
@@ -18,6 +20,7 @@ describe('EmployeeEffects', () => {
   let actions$: Observable<Action>;
   let effects: EmployeeEffects;
   let employeeService: MockEmployeeService;
+  let store: MockStore;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -25,6 +28,13 @@ describe('EmployeeEffects', () => {
         EmployeeEffects,
         provideMockActions(() => actions$),
         RouterTestingModule,
+        provideMockStore({
+          initialState: {
+            employee: {
+              employees: [],
+            },
+          },
+        }),
         {
           provide: EmployeeService,
           useValue: jasmine.createSpyObj('EmployeeService', [
@@ -35,8 +45,10 @@ describe('EmployeeEffects', () => {
       ],
     });
 
+    store = TestBed.inject(MockStore);
     effects = TestBed.inject(EmployeeEffects);
     employeeService = TestBed.inject(EmployeeService) as MockEmployeeService;
+    store.overrideSelector(selectEmployees, mockEmployees);
   });
 
   describe('loadEmployees$', () => {

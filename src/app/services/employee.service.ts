@@ -21,11 +21,11 @@ export class EmployeeService {
     return of(employeeList);
   }
 
-  updateEmployee(employee: Employee): Observable<Employee[]> {
-    const employeeList: Employee[] = JSON.parse(
-      sessionStorage.getItem('employeeList') || '[]'
-    );
-    const updateEmployeeList = employeeList.map((e) =>
+  updateEmployee(
+    employee: Employee,
+    currentEmployees: Employee[]
+  ): Observable<Employee[]> {
+    const updateEmployeeList = currentEmployees.map((e) =>
       e.id === employee.id ? employee : e
     );
     sessionStorage.setItem('employeeList', JSON.stringify(updateEmployeeList));

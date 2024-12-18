@@ -9,6 +9,7 @@ import { By } from '@angular/platform-browser';
 import { updateEmployee } from 'src/app/store';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { mockEmployee, mockEmployees } from 'src/app/testing/mocks';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('EmployeeEditFormComponent', () => {
   let component: EmployeeEditFormComponent;
@@ -26,7 +27,12 @@ describe('EmployeeEditFormComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [EmployeeEditFormComponent],
-      imports: [MaterialModule, ReactiveFormsModule, NoopAnimationsModule],
+      imports: [
+        MaterialModule,
+        ReactiveFormsModule,
+        NoopAnimationsModule,
+        RouterTestingModule,
+      ],
       providers: [
         { provide: ActivatedRoute, useValue: mockActivatedRoute },
         provideMockStore({ initialState }),
