@@ -14,7 +14,12 @@
     </button>
   </div>
   <div class="employee-profile__content">
-    <img class="employee-profile__photo" alt="" [src]="employee.photo" />
+    <img
+      class="employee-profile__photo"
+      alt=""
+      [src]="employee.photo"
+      loading="lazy"
+    />
     <h3 class="employee-profile__name">
       {{ employee.name }}
     </h3>
